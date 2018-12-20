@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Food Oasis Mappage</title>
+	<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+	<script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.50.0/mapbox-gl.js'></script>
+	<link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.50.0/mapbox-gl.css' rel='stylesheet' />
+	<link href="https://fonts.googleapis.com/css?family=Roboto|Teko" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+
+<body>
+
+<div id="sidebar">
+
+    <div id="mySidebar" class="about">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  <a href='https://www.mapbox.com/studio/styles/vivisunlin/cjn4xax170ht92sp3phknz7ci/edit/'>Map</a> 
+  <a href='http://www.census.gov/en.html'>Data Sources </a>
+  <a href='mailto:xl5hk@virginia.edu'>Contacts</a>
+    </div>
+
+
+<div id="main">
+  <button class="openbtn" onclick="openNav()">&#9776;</button> 
+
+  <h1>Food Deserts in Charlottesville</h1>
+  <div id='info-window'>
+  	<h3>This is an analysis map about the people of Charlottesville who are in the Food Deserts and have the potential to use the website of Food Oasis.Food deserts are defined  as parts of the country vapid of fresh fruit, vegetables, and other healthful whole foods, usually found in impoverished areas. This is largely due to a lack of grocery stores, farmers’ markets, and healthy food providers. There is no car and no supermarket within one mile.</h3></div>
+  	<div id='info-window-body'>
+			<h4>Hover a market or a grocery to learn more about it.</h4>
+			<h4>Click the map to find something interesting.</h4>
+		</div>
+	<div class="slidecontainer">
+	<h4>Changing the radius of markets heatmap:</h4>
+    <input type="range" min="1" max="4" value="1" steps="1" class="slider" id="myRange" oninput="myFunction(this.value)">
+    <p id="demo"></p>
+
+
+</div>
+	<div id="chapters">
+		<h4> Market Infomation</h4>
+	</div>
+	
+  
+</div>
+</div>
+
+<div id='layers-control'></div>
+
+<div class='map-overlay' id='color-changer'>
+     <div><label>Bus Stops Color</label>
+
+      <div id='swatches'></div>
+     </div>
+    </div>
+</div>
+
+
+
+<div id="map"></div>
+
+
+<div id='screen'></div>
+
+
+<div class='map-overlay' id='legend'>
+  <div class="column"></div>
+  <div class="column"></div>
+  <div class="column"></div>
+  <div class="column"></div>
+</div>	
+
+<div class='map-overlay' id='info-markets'>
+		<div><p>Markets and Groceries</p> 
+</div>
+	</div>	
+</div>
+
+</body>
+
+<script src="map.js"></script>
+</html>

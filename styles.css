@@ -1,0 +1,423 @@
+body {
+margin: 0;
+padding: 0;
+}
+
+body, p {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 140%;
+    color: #111;
+}
+h1{font-family: 'Roboto', sans-serif;
+    font-weight: 600;
+    font-size: 18px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #111;
+
+}
+h2{ 
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+    font-size: 16px;    
+    color: #111;
+}
+
+h3{ 
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+    font-size: 14px;    
+    color: #111;
+}
+
+h4{ 
+    font-family: 'Roboto', sans-serif;
+    font-weight: 600;
+    font-size: 16px;    
+    color: #111;
+}
+
+#sidebar {
+    position: absolute;
+    z-index: 2;
+    right: 0;
+    top:0;
+    width: 30%;
+    height: 100vh;
+    background-image: linear-gradient(to right, rgba(255,255,255,0.3) , rgba(255,255,255,1));
+}
+
+/* The sidebar menu */
+.about {
+  height: 100%; /* 100% Full-height */
+  width: 0; /* 0 width - change this with JavaScript */
+  position: absolute; /* Stay in place */
+  z-index: 1000; /* Stay on top */
+  top: 0;
+  left: 0;
+  background-color: #fae596; /* Black*/
+  overflow-x: hidden; /* Disable horizontal scroll */
+  padding-top: 60px; /* Place content 60px from the top */
+  transition: 0.5s; /* 0.5 second transition effect to slide in the sidebar */
+}
+
+/* The sidebar links */
+.about a {
+  padding: 8px 8px 8px 32px;
+  font-family: 'Roboto', sans-serif;
+  text-decoration: none;
+  font-size: 18px;
+  color: #111;
+  display: block;
+  transition: 0.3s;
+}
+
+/* When you mouse over the navigation links, change their color */
+.about a:hover {
+  color: #f1f1f1;
+}
+
+/* Position and style the close button (top right corner) */
+.about .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+/* The button used to open the sidebar */
+.openbtn {
+  font-size: 20px;
+  cursor: pointer;
+  background-color: #111;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+}
+
+.openbtn:hover {
+  background-color: #444;
+}
+
+/* Style page content - use this if you want to push the page content to the right when you open the side navigation */
+#main {
+  transition: margin-left .5s; /* If you want a transition effect */
+  padding: 20px;
+}
+
+/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+@media screen and (max-height: 450px) {
+  .about {padding-top: 15px;}
+  .about a {font-size: 18px;}
+}
+
+#color-changer {
+    position:absolute;
+    font-family: 'Roboto', sans-serif;
+    right:30%;
+    top: 50%;
+    width: 40px;
+    margin: 5px;
+    text-align: left;
+    color:white;
+    border-bottom: 1px solid rgba(0,0,0,0.25);
+    background-color: #63CACB;
+    font-size: 13px;
+    border-radius: 15%;
+    text-align: center;
+}
+
+#color-changer .swatch {
+    border-radius: 100%;
+    display: block;
+    width: 20px;
+    height: 20px;
+    margin: 5px 0; 
+    padding-left: 10px;
+    left:20px;
+   }
+
+#layers-control {
+    position: absolute;
+    z-index: 1;
+    top: 30%;
+    right:30%;
+    width: 120px;
+}
+
+#layers-control a {
+    font-size: 13px;
+    font-family: 'Roboto', sans-serif;
+    color: white;
+    display: block;
+    margin: 0 0 5px 0;
+    padding: 0;
+    padding: 10px;
+    text-decoration: none;
+    border-bottom: 1px solid rgba(0,0,0,0.25);
+    text-align: center;
+    background-color: #ccc;
+}
+
+#layers-control a:last-child {
+    border: none;
+}
+
+#layers-control a:hover {
+    background-color: #F8DD2E;
+}
+
+#layers-control a.active {
+    background-color: #63CACB;
+    color: #ffffff;
+}
+
+#layers-control a.active:hover {
+    background: #F8DD2E;
+}
+
+
+#chapters {
+    margin: 30px 5px;
+    height: 470px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    color:white;
+}
+
+#chapters>.chapter {
+    margin-bottom: 50px;
+}
+
+#chapters>.chapter>img {
+    width: 100%;
+}
+
+#map {
+position: absolute;
+top: 0;
+bottom: 0;
+left: 0;
+right: 0;
+width: 100%; 
+height: 100vh; 
+}
+
+#screen {
+	position:absolute;
+	width: 100vw;
+	height: 100vh;
+	background-color: black;
+	opacity: 0.6;
+	z-index: 1;
+	display:none;
+
+}
+
+.modal{
+	display: none;
+	width: 50vw;
+	height: 50vh;
+	position: absolute;
+	margin: auto;
+	background-color: white;
+	margin-top: 150px;
+    left: 0;
+    right: 0;
+    background-color: white;
+    z-index: 2;
+    padding: 30px;
+    font-family: Roboto;
+
+}
+
+.modal>.modal-title{
+
+}
+
+.modal>.modal-body{
+
+}
+
+.modal .close-button {
+	color: #cccccc;
+	position: absolute;
+	right: 0;
+	top: 0;
+	margin: 10px;
+	line-height: 30px;
+	font-size: 30px;
+    border: none;
+    background: none;
+    cursor: pointer;
+}
+
+.modal .close-button:hover { 
+	color: #bbbbbb;
+}
+
+.button-default {
+	background-color: #F8DD2E;
+	border-radius: 10px;
+	color: black;
+	padding: 10px 20px;
+	font-family: Roboto;
+	cursor: pointer;
+	margin: 20px;
+	border: none;
+	font-size: 18px;
+	z-index: 1;
+}
+
+.button-default:hover{
+	background-color: #F9C700;
+}
+
+#about {
+    position: absolute;
+    right: 0;
+    bottom: : 255;
+   }
+
+
+.map-overlay{
+	position: absolute;
+	font-family:  Gotham Medium;
+	z-index: 1;
+}
+
+#features {
+	position: absolute;
+	top: 10px;
+	left: 0;
+	background-color: rgba(255,255,255,0.8);
+    margin: 20px;
+    padding: 5px;
+    text-align: center;
+    border-radius: 10px;
+}
+
+#info-markets {
+	position: absolute;
+	top: 20px;
+	left: 0;
+	background-color: rgba(255, 255, 255, 0.8);
+    margin: 20px;
+    padding: 5px;
+    text-align: center;
+    border-radius: 10px;
+}
+
+#legend {
+    bottom: 20px;
+    left: 10px;
+    background-color: rgba(255,255,255,0.8);
+    margin: 20px;
+    border-radius: 10px;
+    padding: 15px;
+}
+
+.legend-key {
+	display: inline-block;
+	border-radius: 100%;
+	width: 10px;
+	height: 10px;
+	margin-right: 5px;
+}
+
+
+
+
+
+
+.mapboxgl-popup-content {
+    font-family: Roboto;
+    background-color: rgba(255, 255, 255, 0.8);
+    align-self: center;
+}
+.mapboxgl-popup-tip {
+    border-top-color: rgba(255, 255, 255, 0.8);
+}
+
+.markets-image {
+    width: 300px;
+    height: 200px;
+}
+
+#slidercontainer {
+        bottom: 30px;
+        left: 30px;
+        position: absolute;
+        z-index: 1000;
+        width: 65%;
+    }
+
+    #slidercontainer h4 { margin: 0 0 0 5px; }
+    
+    .slider {
+        -webkit-appearance: none;
+        width: 250px;
+        height: 25px;
+        background: white;
+        outline: none;
+        opacity: 0.7;
+        -webkit-transition: .2s;
+        transition: opacity .2s;
+    }
+
+    .slider:hover {
+        opacity: 1;
+    }
+
+    .slider::-webkit-slider-thumb {
+        -webkit-appearance: none;
+        appearance: none;
+        width: 25px;
+        height: 25px;
+        background: #F8DD2E;
+        cursor: pointer;
+    }
+
+    .slider::-moz-range-thumb {
+        width: 25px;
+        height: 25px;
+        background: #4CAF50;
+        cursor: pointer;
+    }
+
+    #timeline-labels .domain, #timeline-labels .tick>line { display: none; }
+    #timeline-labels text { 
+        fill: #85a7b5; 
+        font-family: 'Roboto', sans-serif;
+    }
+    
+    
+
+
+#legend>div { position: relative; }
+.help {
+    cursor: pointer;
+    border-radius: 100%;
+    width: 50px;
+    height: 5px;
+    margin: 5px 5px; 
+    background-color: #F8DD2E;
+    color: white;
+}
+
+.help:hover {
+    background-color: #63CACB;
+}
+
+.tooltip {
+    display: none;
+    position: relative;
+    padding: 15px;
+    background-color: white;
+    top: 0;
+    left: 5%;
+}
+
